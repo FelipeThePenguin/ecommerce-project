@@ -2,49 +2,49 @@ import './Header.css';
 
 export function Header() {
   return (
-    <header class="ecommerce-header">
-      <div class="left-section">
-        <a class="index-link" href="index.html">
+    <header className="ecommerce-header">
+      <div className="left-section">
+        <a className="index-link" href="index.html">
           <img
             src="assets/images/logos/title-logo-white.svg"
-            class="title-logo hide-on-mobile"
+            className="title-logo hide-on-mobile"
           />
           <img
             src="assets/images/logos/logo-white.svg"
-            class="title-logo hide-on-desktop"
+            className="title-logo hide-on-desktop"
           />
         </a>
       </div>
-      <div class="middle-section">
-        <input class="search-input" />
-        <button class="search-button">
+      <div className="middle-section">
+        <input className="search-input" />
+        <button className="search-button">
           <img
             src="assets/images/icons/header/search-icon.svg"
-            class="search-icon"
+            className="search-icon"
           />
         </button>
       </div>
-      <div class="right-section">
-        <a class="filter-button hide-on-mobile">
+      <div className="right-section">
+        <a className="filter-button hide-on-mobile">
           <img
             src="assets/images/icons/header/filter-icon.svg"
-            class="filter-icon"
+            className="filter-icon"
           />
         </a>
-        <a href="orders.html" class="hide-on-mobile">
+        <a href="orders.html" className="hide-on-mobile">
           Orders
         </a>
-        <a href="checkout.html" class="hide-on-mobile">
-          <div class="cart-quantity">
-            <img src="assets/images/icons/cart-icon.svg" class="cart-icon" />
-            <span class="cart-quantity-number">3</span>
+        <a href="checkout.html" className="hide-on-mobile">
+          <div className="cart-quantity">
+            <img src="assets/images/icons/cart-icon.svg" className="cart-icon" />
+            <span className="cart-quantity-number">3</span>
           </div>
           <span>Cart</span>
         </a>
-        <a class="hide-on-desktop">
+        <a className="hide-on-desktop">
           <img
             src="assets/images/icons/header/hamburger-icon.svg"
-            class="hamburger-icon"
+            className="hamburger-icon"
           />
         </a>
       </div>

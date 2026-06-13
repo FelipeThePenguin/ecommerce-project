@@ -6,29 +6,29 @@ export function HomePage() {
     <>
       <Header />
 
-      <main class="products-grid">
-        <div class="product-details">
-          <div class="product-image-container">
+      <main className="products-grid">
+        <div className="product-details">
+          <div className="product-image-container">
             <img
               src="assets/images/products/airi-plush.jpeg"
-              class="product-image"
+              className="product-image"
             />
           </div>
-          <div class="product-contents">
-            <div class="product-name limit-text-to-2-lines">
+          <div className="product-contents">
+            <div className="product-name limit-text-to-2-lines">
               Airi Plush - Large
             </div>
             <div>
-              <div class="product-ratings">
+              <div className="product-ratings">
                 <img
                   src="assets/images/ratings/50.svg"
-                  class="product-ratings-stars"
+                  className="product-ratings-stars"
                 />
-                <span class="product-ratings-count">4567</span>
+                <span className="product-ratings-count">4567</span>
               </div>
-              <div class="product-price">$49.99</div>
-              <div class="select-wrapper">
-                <select class="primary-select">
+              <div className="product-price">$49.99</div>
+              <div className="select-wrapper">
+                <select className="primary-select">
                   <option selected>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -42,43 +42,43 @@ export function HomePage() {
                 </select>
                 <img
                   src="assets/images/icons/arrow-icon.svg"
-                  class="primary-select-icon"
+                  className="primary-select-icon"
                 />
               </div>
             </div>
           </div>
-          <div class="product-actions">
+          <div className="product-actions">
             <img
               src="assets/images/icons/added-message.svg"
-              class="added-message"
+              className="added-message"
             />
-            <button class="primary-button add-to-cart-button">
+            <button className="primary-button add-to-cart-button">
               Add to Cart
             </button>
           </div>
         </div>
-        <div class="product-details">
-          <div class="product-image-container">
+        <div className="product-details">
+          <div className="product-image-container">
             <img
               src="assets/images/products/miku-plush.jpeg"
-              class="product-image"
+              className="product-image"
             />
           </div>
-          <div class="product-contents">
-            <div class="product-name limit-text-to-2-lines">
+          <div className="product-contents">
+            <div className="product-name limit-text-to-2-lines">
               Hatsune Miku Plushie - Limited Edition Japan
             </div>
             <div>
-              <div class="product-ratings">
+              <div className="product-ratings">
                 <img
                   src="assets/images/ratings/40.svg"
-                  class="product-ratings-stars"
+                  className="product-ratings-stars"
                 />
-                <span class="product-ratings-count">1234</span>
+                <span className="product-ratings-count">1234</span>
               </div>
-              <div class="product-price">$39.99</div>
-              <div class="select-wrapper">
-                <select class="primary-select">
+              <div className="product-price">$39.99</div>
+              <div className="select-wrapper">
+                <select className="primary-select">
                   <option selected>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -92,43 +92,43 @@ export function HomePage() {
                 </select>
                 <img
                   src="assets/images/icons/arrow-icon.svg"
-                  class="primary-select-icon"
+                  className="primary-select-icon"
                 />
               </div>
             </div>
           </div>
-          <div class="product-actions">
+          <div className="product-actions">
             <img
               src="assets/images/icons/added-message.svg"
-              class="added-message"
+              className="added-message"
             />
-            <button class="primary-button add-to-cart-button">
+            <button className="primary-button add-to-cart-button">
               Add to Cart
             </button>
           </div>
         </div>
-        <div class="product-details">
-          <div class="product-image-container">
+        <div className="product-details">
+          <div className="product-image-container">
             <img
               src="assets/images/products/shizuku-plush.jpeg"
-              class="product-image"
+              className="product-image"
             />
           </div>
-          <div class="product-contents">
-            <div class="product-name limit-text-to-2-lines">
+          <div className="product-contents">
+            <div className="product-name limit-text-to-2-lines">
               Shizuku Plushie - Small
             </div>
             <div>
-              <div class="product-ratings">
+              <div className="product-ratings">
                 <img
                   src="assets/images/ratings/45.svg"
-                  class="product-ratings-stars"
+                  className="product-ratings-stars"
                 />
-                <span class="product-ratings-count">890</span>
+                <span className="product-ratings-count">890</span>
               </div>
-              <div class="product-price">$24.99</div>
-              <div class="select-wrapper">
-                <select class="primary-select">
+              <div className="product-price">$24.99</div>
+              <div className="select-wrapper">
+                <select className="primary-select">
                   <option selected>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -142,17 +142,17 @@ export function HomePage() {
                 </select>
                 <img
                   src="assets/images/icons/arrow-icon.svg"
-                  class="primary-select-icon"
+                  className="primary-select-icon"
                 />
               </div>
             </div>
           </div>
-          <div class="product-actions">
+          <div className="product-actions">
             <img
               src="assets/images/icons/added-message.svg"
-              class="added-message"
+              className="added-message"
             />
-            <button class="primary-button add-to-cart-button">
+            <button className="primary-button add-to-cart-button">
               Add to Cart
             </button>
           </div>

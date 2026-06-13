@@ -2,24 +2,24 @@ import './TrackingPage.css';
 
 export function TrackingPage() {
   return (
-    <main class="tracking-container">
+    <main className="tracking-container">
       <div>
-        <a href="orders.html" class="primary-span tracking-orders-link">
+        <a href="orders.html" className="primary-span tracking-orders-link">
           View all orders
         </a>
       </div>
       <h2>Arriving on Wednesday, June 10</h2>
       <span>Airi Plushie - Large</span>
       <span>Quantity: 1</span>
-      <img src="assets/images/products/airi-plush.jpeg" class="product-image" />
-      <div class="tracking-status-container">
-        <div class="tracking-status">
-          <span class="tracking-span current-status">Preparing</span>
-          <span class="tracking-span">Shipped</span>
-          <span class="tracking-span">Delivered</span>
+      <img src="assets/images/products/airi-plush.jpeg" className="product-image" />
+      <div className="tracking-status-container">
+        <div className="tracking-status">
+          <span className="tracking-span current-status">Preparing</span>
+          <span className="tracking-span">Shipped</span>
+          <span className="tracking-span">Delivered</span>
         </div>
-        <div class="tracking-bar-container">
-          <div class="tracking-bar"></div>
+        <div className="tracking-bar-container">
+          <div className="tracking-bar"></div>
         </div>
       </div>
     </main>
