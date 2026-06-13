@@ -4,7 +4,7 @@ export function Header() {
   return (
     <header className="ecommerce-header">
       <div className="left-section">
-        <a className="index-link" href="index.html">
+        <a className="index-link" href="/">
           <img
             src="assets/images/logos/title-logo-white.svg"
             className="title-logo hide-on-mobile"
@@ -31,10 +31,10 @@ export function Header() {
             className="filter-icon"
           />
         </a>
-        <a href="orders.html" className="hide-on-mobile">
+        <a href="/orders" className="hide-on-mobile">
           Orders
         </a>
-        <a href="checkout.html" className="hide-on-mobile">
+        <a href="/checkout" className="hide-on-mobile">
           <div className="cart-quantity">
             <img src="assets/images/icons/cart-icon.svg" className="cart-icon" />
             <span className="cart-quantity-number">3</span>

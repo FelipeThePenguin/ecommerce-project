@@ -14,7 +14,7 @@
 
 /* LEFT SECTION */
 
-.left-section {
+.checkout-header .left-section {
  display: flex;
  justify-content: start;
  align-items: center;
@@ -32,7 +32,7 @@
 
 /* MIDDLE SECTION */
 
-.middle-section {
+.checkout-header .middle-section {
  font-size: 22px;
  font-weight: 500;
  white-space: nowrap;
@@ -40,7 +40,7 @@
 
 /* RIGHT SECTION */
 
-.right-section {
+.checkout-header .right-section {
  display: flex;
  justify-content: end;
  align-items: center;
@@ -57,29 +57,29 @@
   width: 90%;
  }
 
- .middle-section {
+ .checkout-header .middle-section {
   font-size: 18px;
  }
 
- .left-section {
+ .checkout-header .left-section {
   height: 60%;
  }
 
- .right-section {
+ .checkout-header .right-section {
   height: 55%;
  }
 }
 
 @media (max-width: 450px) {
- .middle-section {
+ .checkout-header .middle-section {
   font-size: 16px;
  }
 
- .left-section {
+ .checkout-header .left-section {
   height: 55%;
  }
 
- .right-section {
+ .checkout-header .right-section {
   height: 50%;
  }
 

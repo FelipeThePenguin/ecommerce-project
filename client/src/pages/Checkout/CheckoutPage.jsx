@@ -3,7 +3,7 @@ import './CheckoutPage.css';
 
 export function CheckoutPage() {
   return (
-    <>
+    <div className="checkout-page">
       <CheckoutHeader />
 
       <h2 className="checkout-title">
@@ -12,14 +12,14 @@ export function CheckoutPage() {
 
       <main className="checkout-grid">
         <section className="order-summary">
-          <div className="product-details">
+          <div className="checkout-product-details">
             <div className="delivery-date">Delivery date: Tuesday, June 10</div>
             <div className="product-details-row">
               <div className="product-details-content">
                 <div className="product-details-left">
                   <img
                     src="assets/images/products/airi-plush.jpeg"
-                    className="product-image"
+                    className="checkout-product-image"
                   />
                 </div>
                 <div className="product-details-right">
@@ -65,14 +65,14 @@ export function CheckoutPage() {
             </div>
           </div>
 
-          <div className="product-details">
+          <div className="checkout-product-details">
             <div className="delivery-date">Delivery date: Friday, June 19</div>
             <div className="product-details-row">
               <div className="product-details-content">
                 <div className="product-details-left">
                   <img
                     src="assets/images/products/miku-plush.jpeg"
-                    className="product-image"
+                    className="checkout-product-image"
                   />
                 </div>
                 <div className="product-details-right">
@@ -150,6 +150,6 @@ export function CheckoutPage() {
           </div>
         </section>
       </main>
-    </>
+    </div>
   );
 }

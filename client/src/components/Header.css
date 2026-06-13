@@ -15,7 +15,7 @@
 
 /* LEFT SECTION */
 
-.left-section {
+.ecommerce-header .left-section {
  display: flex;
  justify-content: center;
  align-items: center;
@@ -25,7 +25,7 @@
  border-radius: 6px;
 }
 
-.left-section:hover {
+.ecommerce-header .left-section:hover {
  border: 1px solid white;
 }
 
@@ -41,7 +41,7 @@
 
 /* MIDDLE SECTION */
 
-.middle-section {
+.ecommerce-header .middle-section {
  display: flex;
  align-items: center;
  flex: 1;
@@ -79,13 +79,13 @@
 
 /* RIGHT SECTION */
 
-.right-section {
+.ecommerce-header .right-section {
  display: flex;
  height: 100%;
  margin-right: 6px;
 }
 
-.right-section a {
+.ecommerce-header .right-section a {
  display: flex;
  align-items: center;
  font-weight: bold;
@@ -96,7 +96,7 @@
  border: 1px solid transparent;
 }
 
-.right-section a:hover {
+.ecommerce-header .right-section a:hover {
  border: 1px solid white;
 }
 

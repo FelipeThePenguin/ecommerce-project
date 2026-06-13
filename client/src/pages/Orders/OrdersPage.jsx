@@ -3,7 +3,7 @@ import './OrdersPage.css';
 
 export function OrdersPage() {
   return (
-    <>
+    <div className="orders-page">
       <Header />
 
       <div className="orders-message">
@@ -26,18 +26,18 @@ export function OrdersPage() {
               <span>6001d8a3-1e68-4c3f-9743-e150b68ddf64</span>
             </div>
           </div>
-          <div className="product-details">
+          <div className="order-product-details">
             <div className="image-container">
               <img
                 src="assets/images/products/airi-plush.jpeg"
-                className="product-image"
+                className="order-product-image"
               />
             </div>
             <div className="product-content">
-              <p className="product-name">Airi Plushie</p>
+              <p className="font-bold">Airi Plushie</p>
               <p>Arriving on: June 9</p>
               <p>Quantity: 1</p>
-              <button className="primary-button add-to-cart-button">
+              <button className="primary-button orders-add-to-cart-button">
                 <img
                   src="assets/images/icons/cart-icon.svg"
                   className="add-to-cart-icon"
@@ -45,8 +45,8 @@ export function OrdersPage() {
                 Add to Cart
               </button>
             </div>
-            <div className="product-actions">
-              <a href="tracking.html">
+            <div className="track-button-container">
+              <a href="/tracking">
                 <button className="secondary-button track-button">
                   Track Package
                 </button>
@@ -55,14 +55,14 @@ export function OrdersPage() {
             <div className="image-container">
               <img
                 src="assets/images/products/shizuku-plush.jpeg"
-                className="product-image"
+                className="order-product-image"
               />
             </div>
             <div className="product-content">
-              <p className="product-name">Shizuku Plushie</p>
+              <p className="font-bold">Shizuku Plushie</p>
               <p>Arriving on: June 12</p>
               <p>Quantity: 2</p>
-              <button className="primary-button add-to-cart-button">
+              <button className="primary-button orders-add-to-cart-button">
                 <img
                   src="assets/images/icons/cart-icon.svg"
                   className="add-to-cart-icon"
@@ -70,8 +70,8 @@ export function OrdersPage() {
                 Add to Cart
               </button>
             </div>
-            <div className="product-actions">
-              <a href="tracking.html">
+            <div className="track-button-container">
+              <a href="/tracking">
                 <button className="secondary-button track-button">
                   Track Package
                 </button>
@@ -80,6 +80,6 @@ export function OrdersPage() {
           </div>
         </div>
       </main>
-    </>
+    </div>
   );
 }

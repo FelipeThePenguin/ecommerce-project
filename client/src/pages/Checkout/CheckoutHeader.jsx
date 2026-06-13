@@ -4,7 +4,7 @@ export function CheckoutHeader() {
   return (
     <header className="checkout-header">
       <div className="left-section">
-        <a className="index-link" href="index.html">
+        <a className="index-link" href="/">
           <img
             src="assets/images/logos/title-logo-primary.svg"
             className="title-logo hide-on-mobile"
@@ -16,7 +16,7 @@ export function CheckoutHeader() {
         </a>
       </div>
       <div className="middle-section">
-        <a href="index.html">
+        <a href="/">
           Checkout &#40;<span className="primary-span">67 items</span>&#41;
         </a>
       </div>
