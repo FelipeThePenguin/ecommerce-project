@@ -1,0 +1,155 @@
+.ecommerce-header {
+ position: fixed;
+ top: 0;
+ left: 0;
+ right: 0;
+ z-index: 999;
+ 
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ 
+ background: var(--primary);
+ height: var(--header-height);
+}
+
+/* LEFT SECTION */
+
+.left-section {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 70%;
+ margin-left: 24px;
+ border: 1px solid transparent;
+ border-radius: 6px;
+}
+
+.left-section:hover {
+ border: 1px solid white;
+}
+
+.index-link {
+ height: 100%;
+}
+
+.title-logo {
+ height: 100%;
+ border-radius: 5px;
+ padding: 3px 5px;
+}
+
+/* MIDDLE SECTION */
+
+.middle-section {
+ display: flex;
+ align-items: center;
+ flex: 1;
+ 
+ height: 60%;
+ margin-left: 24px;
+ margin-right: 12px;
+}
+
+.search-input {
+ width: 0;
+ flex: 1;
+ border-radius: 12px 0 0 12px;
+ border: none;
+ height: 100%;
+ font-size: 15px;
+}
+
+.search-button {
+ background: var(--primary-light);
+ border-radius: 0 12px 12px 0;
+ border: none;
+ height: 100%;
+ padding-right: 8px;
+ transition: opacity 0.2s;
+}
+
+.search-button:hover {
+ opacity: 0.8;
+}
+
+.search-icon {
+ height: 25px;
+}
+
+/* RIGHT SECTION */
+
+.right-section {
+ display: flex;
+ height: 100%;
+ margin-right: 6px;
+}
+
+.right-section a {
+ display: flex;
+ align-items: center;
+ font-weight: bold;
+ color: white;
+ margin: 5px 0;
+ padding: 2px 16px;
+ border-radius: 5px;
+ border: 1px solid transparent;
+}
+
+.right-section a:hover {
+ border: 1px solid white;
+}
+
+.filter-button {
+ margin-right: 48px !important;
+ position: relative;
+ anchor-name: --filter-button;
+}
+
+.filter-button:hover {
+ margin-left: 1px;
+ margin-right: 47px !important;
+}
+
+.filter-icon, .hamburger-icon {
+ height: 30px;
+}
+
+.cart-quantity {
+ display: flex;
+ justify-content: center;
+ align-items: start;
+ position: relative;
+}
+
+.cart-quantity-number {
+ position: absolute;
+ top: 8px;
+ margin-left: 2px;
+ color: var(--primary);
+}
+
+.cart-icon {
+ height: 50px;
+}
+
+/* FILTER OPTIONS */
+
+.filter-options {
+ position: absolute;
+ position-anchor: --filter-button;
+ position-area: bottom center;
+ top: 15px;
+
+ display: flex;
+ flex-direction: column;
+
+ padding: 10px 16px;
+ border-radius: 5px;
+ background: white;
+ box-shadow: 0 2px 5px hsla(0, 0%, 0%, 0.25);
+}
+
+.ratings-stars {
+ height: 28px;
+}

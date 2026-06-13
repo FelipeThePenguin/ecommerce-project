@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Orders Page</title>
+ 
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+ 
+ <link rel="stylesheet" href="/styles/globals.css">
+ <link rel="stylesheet" href="/styles/header.css">
+
+ <link rel="stylesheet" href="/styles/pages/orders.css">
+</head>
+
+<body>
+ <header class="ecommerce-header">
+  <div class="left-section">
+   <a class="index-link" href="index.html">
+    <img src="assets/images/logos/title-logo-white.svg" class="title-logo hide-on-mobile"/>
+    <img src="assets/images/logos/logo-white.svg" class="title-logo hide-on-desktop"/>
+   </a>
+  </div>
+  <div class="middle-section">
+   <input class="search-input" />
+   <button class="search-button">
+    <img src="assets/images/icons/header/search-icon.svg" class="search-icon"/>
+   </button>
+  </div>
+  <div class="right-section">
+   <a class="filter-button hide-on-mobile">
+    <img src="assets/images/icons/header/filter-icon.svg" class="filter-icon"/>
+   </a>
+   <a href="orders.html" class="hide-on-mobile">
+    Orders
+   </a>
+   <a href="checkout.html" class="hide-on-mobile">
+    <div class="cart-quantity">
+     <img src="assets/images/icons/cart-icon.svg" class="cart-icon"/>
+     <span class="cart-quantity-number">3</span>
+    </div>
+    <span>Cart</span>
+   </a>
+   <a class="hide-on-desktop">
+    <img src="assets/images/icons/header/hamburger-icon.svg" class="hamburger-icon"/>
+   </a>
+  </div>
+ </header>
+
+ <div class="orders-message">
+  <span>Your Orders</span>
+ </div>
+
+ <main class="orders-container">
+  <div class="order-details">
+   <div class="order-content">
+    <div class="order-placed">
+     <span class="font-bold">Order Placed: </span>
+     <span>June 9</span>
+    </div>
+    <div class="order-total">
+     <span class="font-bold">Total: </span>
+     <span>$67.67</span>
+    </div>
+    <div class="order-id">
+     <span class="font-bold">Order ID: </span>
+     <span>6001d8a3-1e68-4c3f-9743-e150b68ddf64</span>
+    </div>
+   </div>
+   <div class="product-details">
+    <div class="image-container">
+     <img src="assets/images/products/airi-plush.jpeg" class="product-image" />
+    </div>
+    <div class="product-content">
+     <p class="product-name">Airi Plushie</p>
+     <p>Arriving on: June 9</p>
+     <p>Quantity: 1</p>
+     <button class="primary-button add-to-cart-button">
+      <img src="assets/images/icons/cart-icon.svg" class="add-to-cart-icon"/>
+      Add to Cart
+     </button>
+    </div>
+    <div class="product-actions">
+     <a href="tracking.html">
+      <button class="secondary-button track-button">Track Package</button>
+     </a>
+    </div>
+    <div class="image-container">
+     <img src="assets/images/products/shizuku-plush.jpeg" class="product-image" />
+    </div>
+    <div class="product-content">
+     <p class="product-name">Shizuku Plushie</p>
+     <p>Arriving on: June 12</p>
+     <p>Quantity: 2</p>
+     <button class="primary-button add-to-cart-button">
+      <img src="assets/images/icons/cart-icon.svg" class="add-to-cart-icon"/>
+      Add to Cart
+     </button>
+    </div>
+    <div class="product-actions">
+     <a href="tracking.html">
+      <button class="secondary-button track-button">Track Package</button>
+     </a>
+    </div>
+   </div>
+  </div>
+ </main>
+</body>
+
+</html>
