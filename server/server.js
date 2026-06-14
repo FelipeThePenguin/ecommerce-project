@@ -10,9 +10,9 @@ app.use(cors({
  origin: ['http://localhost:3000']
 }));
 app.use(express.json());
-app.use("/products", productsRouter);
-app.use("/cart-items", cartRouter);
-app.use("/orders", ordersRouter);
+app.use("/api/products", productsRouter);
+app.use("/api/cart-items", cartRouter);
+app.use("/api/orders", ordersRouter);
 
 app.listen(3000, () => {
  console.log("The server is running");
