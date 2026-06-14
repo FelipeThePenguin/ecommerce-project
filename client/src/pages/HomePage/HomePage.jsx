@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Header } from "../../components/Header";
+import { formatMoney } from "../../utils/formatMoney";
 import "./HomePage.css";
 
 export function HomePage() {
@@ -40,7 +41,9 @@ export function HomePage() {
                         {product.rating.count}
                       </span>
                     </div>
-                    <div className="product-price">{product.priceCents}</div>
+                    <div className="product-price">
+                      {formatMoney(product.priceCents)}
+                    </div>
                     <div className="select-wrapper">
                       <select className="primary-select">
                         <option selected>1</option>
