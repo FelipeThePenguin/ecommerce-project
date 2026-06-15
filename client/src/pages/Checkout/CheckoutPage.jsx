@@ -1,7 +1,23 @@
-import { CheckoutHeader } from './CheckoutHeader';
-import './CheckoutPage.css';
+import { useState, useEffect } from "react";
+import axios from "axios";
+import dayjs from "dayjs";
+import { CheckoutHeader } from "./CheckoutHeader";
+import { DeliveryOptions } from "./DeliveryOptions";
+import { formatMoney } from "../../utils/formatMoney";
+import "./CheckoutPage.css";
 
-export function CheckoutPage() {
+export function CheckoutPage({ cart, loadCart }) {
+  const [deliveryOptions, setDeliveryOptions] = useState([]);
+
+  useEffect(() => {
+    const getDeliveryOptions = async () => {
+      const response = await axios.get("/api/delivery-options");
+      await loadCart();
+      setDeliveryOptions(response.data);
+    };
+    getDeliveryOptions();
+  }, [loadCart]);
+
   return (
     <div className="checkout-page">
       <CheckoutHeader />
@@ -12,113 +28,48 @@ export function CheckoutPage() {
 
       <main className="checkout-grid">
         <section className="order-summary">
-          <div className="checkout-product-details">
-            <div className="delivery-date">Delivery date: Tuesday, June 10</div>
-            <div className="product-details-row">
-              <div className="product-details-content">
-                <div className="product-details-left">
-                  <img
-                    src="assets/images/products/airi-plush.jpeg"
-                    className="checkout-product-image"
-                  />
-                </div>
-                <div className="product-details-right">
-                  <span className="product-detail">Airi Plush - Large</span>
-                  <span className="product-detail">$49.99</span>
-                  <div>
-                    <span>Quantity: 2</span>
-                    <span className="primary-span">Update</span>
-                    <span className="primary-span">Delete</span>
-                  </div>
-                </div>
-              </div>
-              <div className="delivery-options">
-                <h3 className="delivery-option-title">Choose a delvery option:</h3>
-                <div className="delivery-option">
-                  <input type="radio" className="delivery-option-selector" />
-                  <div className="delivery-option-details">
-                    <div className="delivery-option-date">Wednesday, June 17</div>
-                    <div className="delivery-option-shipping-price">
-                      FREE Shipping
-                    </div>
-                  </div>
-                </div>
-                <div className="delivery-option">
-                  <input type="radio" className="delivery-option-selector" />
-                  <div className="delivery-option-details">
-                    <div className="delivery-option-date">Friday, June 19</div>
-                    <div className="delivery-option-shipping-price">
-                      $4.99 - Shipping
-                    </div>
-                  </div>
-                </div>
-                <div className="delivery-option">
-                  <input type="radio" className="delivery-option-selector" />
-                  <div className="delivery-option-details">
-                    <div className="delivery-option-date">Monday, June 22</div>
-                    <div className="delivery-option-shipping-price">
-                      $9.99 - Shipping
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          {cart &&
+            cart.map((cartItem) => {
+              const selectedDeliveryOption = deliveryOptions.find((deliveryOption) => {
+               return cartItem.deliveryOptionId === deliveryOption.id
+              });
+              const deliveryDate = dayjs().add(selectedDeliveryOption.deliveryDays, 'days').format('dddd, MMMM, D');
 
-          <div className="checkout-product-details">
-            <div className="delivery-date">Delivery date: Friday, June 19</div>
-            <div className="product-details-row">
-              <div className="product-details-content">
-                <div className="product-details-left">
-                  <img
-                    src="assets/images/products/miku-plush.jpeg"
-                    className="checkout-product-image"
-                  />
-                </div>
-                <div className="product-details-right">
-                  <span className="product-detail">
-                    Hatsune Miku Plush - Medium
-                  </span>
-                  <span className="product-detail">$29.99</span>
-                  <div>
-                    <span>Quantity: 1</span>
-                    <span className="primary-span">Update</span>
-                    <span className="primary-span">Delete</span>
+              return (
+                <div
+                  key={cartItem.productId}
+                  className="checkout-product-details"
+                >
+                  <div className="delivery-date">
+                    Delivery date: {deliveryDate}
                   </div>
-                </div>
-              </div>
-              <div className="delivery-options">
-                <h3 className="delivery-option-title">Choose a delvery option:</h3>
-                <div className="delivery-option">
-                  <input type="radio" className="delivery-option-selector" />
-                  <div className="delivery-option-details">
-                    <div className="delivery-option-date">Wednesday, June 17</div>
-                    <div className="delivery-option-shipping-price">
-                      FREE Shipping
+                  <div className="product-details-row">
+                    <div className="product-details-content">
+                      <div className="product-details-left">
+                        <img
+                          src={cartItem.product.image}
+                          className="checkout-product-image"
+                        />
+                      </div>
+                      <div className="product-details-right">
+                        <span className="product-detail">
+                          {cartItem.product.name}
+                        </span>
+                        <span className="product-detail">
+                          {formatMoney(cartItem.product.priceCents)}
+                        </span>
+                        <div>
+                          <span>Quantity: {cartItem.quantity}</span>
+                          <span className="primary-span">Update</span>
+                          <span className="primary-span">Delete</span>
+                        </div>
+                      </div>
                     </div>
+                    <DeliveryOptions loadCart={loadCart} cartItem={cartItem} deliveryOptions={deliveryOptions} />
                   </div>
                 </div>
-                <div className="delivery-option">
-                  <input type="radio" className="delivery-option-selector" />
-                  <div className="delivery-option-details">
-                    <div className="delivery-option-date">Friday, June 19</div>
-                    <div className="delivery-option-shipping-price">
-                      $4.99 - Shipping
-                    </div>
-                  </div>
-                </div>
-                <div className="delivery-option">
-                  <input type="radio" className="delivery-option-selector" />
-                  <div className="delivery-option-details">
-                    <div className="delivery-option-date">Monday, June 22</div>
-                    <div className="delivery-option-shipping-price">
-                      $9.99 - Shipping
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+              );
+            })}
         </section>
 
         <section className="payment-summary">

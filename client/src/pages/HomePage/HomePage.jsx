@@ -4,16 +4,17 @@ import { Header } from "../../components/Header";
 import { formatMoney } from "../../utils/formatMoney";
 import "./HomePage.css";
 
-export function HomePage() {
+export function HomePage({ loadCart }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const getProducts = async () => {
       const response = await axios.get("/api/products");
+      await loadCart();
       setProducts(response.data);
     };
     getProducts();
-  }, []);
+  }, [loadCart]);
 
   return (
     <>
