@@ -31,14 +31,32 @@ router.post("/", async (req, res) => {
  const database = await ecommerceDatabase;
  const cartCollection = await database.collection("cart");
  const { productId, quantity } = req.body;
+ const existingProduct = await cartCollection.findOne({productId}, {_id:0});
 
- const cartItem = {
+ let cartItem = {
   productId,
   quantity,
   deliveryOptionId: "1"
  };
 
- const addedCartItem = await cartCollection.insertOne(cartItem);
+ if (existingProduct) {
+  cartItem = {
+    productId,
+    quantity: existingProduct.quantity + quantity,
+    deliveryOptionId: existingProduct.deliveryOptionId
+  };
+
+   const updatedCartItem = await cartCollection.updateOne({productId}, {
+    $set: {
+      productId: cartItem.productId,
+      quantity: cartItem.quantity,
+      deliveryOptionId: cartItem.deliveryOptionId
+    }
+   });
+ } else {
+   const addedCartItem = await cartCollection.insertOne(cartItem);
+ }
+
  res.send(cartItem);
 });
 
