@@ -1,6 +1,7 @@
 import axios from "axios";
 import dayjs from "dayjs";
 import { formatMoney } from "../../utils/formatMoney";
+import './DeliveryOptions.css';
 
 export function DeliveryOptions({ loadCart, cartItem, deliveryOptions }) {
   const changeDeliveryOption = (productId, deliveryOptionId) => {

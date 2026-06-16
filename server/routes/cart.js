@@ -2,6 +2,7 @@ import { ecommerceDatabase } from "../database/connection.js";
 import express from "express";
 
 const router = express.Router();
+
 router.get("/", async (req, res) => {
   const database = await ecommerceDatabase;
   const cartCollection = await database.collection("cart");
@@ -84,5 +85,16 @@ router.put("/:id", async (req, res) => {
   // Changes fields with $set instead of replacing the document
   res.send(newProduct);
 });
+
+router.delete("/:id", async (req, res) => {
+  const database = await ecommerceDatabase;
+  const cartCollection = await database.collection("cart");
+  const productId = req.params.id;
+
+  const deletedProduct = await cartCollection.deleteOne({ productId });
+
+  // Send nothing with a status code of 204
+  res.status(204).send();
+})
 
 export default router;

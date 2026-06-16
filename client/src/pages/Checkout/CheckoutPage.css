@@ -113,49 +113,6 @@
  }
 }
 
-.delivery-option-title {
- margin: 0 0 8px 0;
- font-weight: 500;
-}
-
-.delivery-option {
- display: flex;
- align-items: center;
- padding-bottom: 8px;
- transition: opacity 0.15s;
- cursor: pointer;
-}
-
-@media (max-width: 450px) {
- .delivery-options {
-  margin-top: 20px;
- }
-}
-
-.delivery-option:hover {
- opacity: 0.65;
-}
-
-.delivery-option-selector {
- height: 18px;
- width: 18px;
- margin-right: 12px;
- accent-color: var(--primary);
-}
-
-.delivery-option-details {
- dsiplay: flex;
- flex-direction: column;
-}
-
-.delivery-option-date {
- font-weight: bold;
-}
-
-.delivery-option-shipping-price {
- color: hsl(0, 0%, 30%);
-}
-
 /* PAYMENT SUMMARY */
 
 @media (max-width: 1000px) {
