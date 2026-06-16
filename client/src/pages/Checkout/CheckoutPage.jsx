@@ -29,13 +29,23 @@ export function CheckoutPage({ cart, loadCart }) {
         <section className="order-summary">
           {cart &&
             cart.map((cartItem) => {
-              const selectedDeliveryOption = deliveryOptions.find((deliveryOption) => {
-               return cartItem.deliveryOptionId === deliveryOption.id
-              });
-              const deliveryDate = dayjs().add(selectedDeliveryOption.deliveryDays, 'days').format('dddd, MMMM, D');
+              const selectedDeliveryOption = deliveryOptions.find(
+                (deliveryOption) => {
+                  return cartItem.deliveryOptionId === deliveryOption.id;
+                },
+              );
+              const deliveryDate = dayjs()
+                .add(selectedDeliveryOption.deliveryDays, "days")
+                .format("dddd, MMMM, D");
 
               return (
-               <CartItemDetails cartItem={cartItem} loadCart={loadCart} deliveryDate={deliveryDate} deliveryOptions={deliveryOptions} />
+                <CartItemDetails
+                  key={cartItem.productId}
+                  cartItem={cartItem}
+                  loadCart={loadCart}
+                  deliveryDate={deliveryDate}
+                  deliveryOptions={deliveryOptions}
+                />
               );
             })}
         </section>
