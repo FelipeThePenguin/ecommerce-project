@@ -4,6 +4,7 @@ import productsRouter from './routes/products.js';
 import cartRouter from './routes/cart.js'
 import ordersRouter from './routes/orders.js';
 import deliveryOptionsRouter from './routes/deliveryOptions.js';
+import paymentSummaryRouter from './routes/paymentSummary.js';
 
 const app = express();
 
@@ -15,6 +16,8 @@ app.use("/api/products", productsRouter);
 app.use("/api/cart-items", cartRouter);
 app.use("/api/orders", ordersRouter);
 app.use("/api/delivery-options", deliveryOptionsRouter);
+app.use("/api/payment-summary", paymentSummaryRouter);
+
 
 app.listen(3000, () => {
  console.log("The server is running");
