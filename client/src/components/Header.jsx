@@ -1,10 +1,23 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router'
 import './Header.css';
 
 export function Header({ cart }) {
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+
   let totalItems = 0;
   cart.forEach((cartItem) => {
    totalItems += cartItem.quantity
   });
+
+  function changeSearch(e) {
+   setSearch(e.target.value);
+  }
+
+  function searchProduct() {
+    navigate(`/?search=${search}`);
+  }
 
   return (
     <header className="ecommerce-header">
@@ -21,8 +34,8 @@ export function Header({ cart }) {
         </a>
       </div>
       <div className="middle-section">
-        <input className="search-input" />
-        <button className="search-button">
+        <input value={search} onChange={changeSearch} className="search-input" />
+        <button onClick={searchProduct} className="search-button">
           <img
             src="/assets/images/icons/header/search-icon.svg"
             className="search-icon"
