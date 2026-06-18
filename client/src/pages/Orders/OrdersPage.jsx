@@ -4,8 +4,15 @@ import { Header } from "../../components/Header";
 import { OrderDetails } from "./OrderDetails";
 import "./OrdersPage.css";
 
-export function OrdersPage() {
+export function OrdersPage({ cart, loadCart }) {
   const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    const loadHeader = async () => {
+      await loadCart();
+    };
+    loadHeader();
+  }, [loadCart]);
 
   useEffect(() => {
     const getOrdersDate = async () => {
@@ -17,7 +24,7 @@ export function OrdersPage() {
 
   return (
     <div className="orders-page">
-      <Header />
+      <Header cart={cart} />
 
       <div className="orders-message">
         <span>Your Orders</span>

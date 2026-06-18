@@ -5,10 +5,17 @@ import { useParams } from "react-router";
 import { Header } from "../../components/Header";
 import "./TrackingPage.css";
 
-export function TrackingPage() {
+export function TrackingPage({ cart, loadCart }) {
   const [trackingDetails, setTrackingDetails] = useState({});
   const params = useParams();
   const { orderId, productId } = params;
+
+  useEffect(() => {
+    const loadHeader = async () => {
+      await loadCart();
+    };
+    loadHeader();
+  }, [loadCart]);
 
   useEffect(() => {
     const trackProduct = async () => {
@@ -44,7 +51,7 @@ export function TrackingPage() {
   // Wait for productsDetails to load before use
   return (
     <>
-      <Header />
+      <Header cart={cart} />
 
       <div className="tracking-body">
         <main className="tracking-container">

@@ -1,6 +1,11 @@
 import './Header.css';
 
-export function Header() {
+export function Header({ cart }) {
+  let totalItems = 0;
+  cart.forEach((cartItem) => {
+   totalItems += cartItem.quantity
+  });
+
   return (
     <header className="ecommerce-header">
       <div className="left-section">
@@ -37,7 +42,7 @@ export function Header() {
         <a href="/checkout" className="hide-on-mobile">
           <div className="cart-quantity">
             <img src="/assets/images/icons/cart-icon.svg" className="cart-icon" />
-            <span className="cart-quantity-number">3</span>
+            <span className="cart-quantity-number">{totalItems}</span>
           </div>
           <span>Cart</span>
         </a>
