@@ -20,7 +20,7 @@ export function CheckoutPage({ cart, loadCart }) {
 
   return (
     <div className="checkout-page">
-      <CheckoutHeader />
+      <CheckoutHeader cart={cart} />
 
       <h2 className="checkout-title">
         <span>Review your order</span>

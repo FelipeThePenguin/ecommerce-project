@@ -27,7 +27,7 @@ export function PaymentSummary({ cart }) {
       <div className="payment-summary-content">
         <h3>Payment Summary</h3>
         <div className="payment-summary-row">
-          <span>Items (3):</span>
+          <span>Items &#40;{paymentSummary.totalItems}&#41;:</span>
           <span>{formatMoney(paymentSummary?.productsCostCents)}</span>
         </div>
         <div className="payment-summary-row">

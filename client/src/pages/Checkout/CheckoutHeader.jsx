@@ -1,6 +1,11 @@
 import './CheckoutHeader.css';
 
-export function CheckoutHeader() {
+export function CheckoutHeader({ cart }) {
+  let totalItems = 0;
+  cart.forEach((cartItem) => {
+   totalItems += cartItem.quantity
+  });
+
   return (
     <header className="checkout-header">
       <div className="left-section">
@@ -17,7 +22,7 @@ export function CheckoutHeader() {
       </div>
       <div className="middle-section">
         <a href="/">
-          Checkout &#40;<span className="primary-span">67 items</span>&#41;
+          Checkout &#40;<span className="primary-span">{totalItems} items</span>&#41;
         </a>
       </div>
       <div className="right-section">
