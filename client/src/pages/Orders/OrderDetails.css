@@ -108,6 +108,10 @@
   row-gap: 16px;
  }
 
+ .image-container {
+  margin-right: 0;
+ }
+
  .track-button-container {
   grid-column-start: 1;
  }

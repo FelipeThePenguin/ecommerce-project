@@ -3,7 +3,7 @@ import { OrdersProductDetails } from "./OrdersProductDetails";
 import { formatMoney } from "../../utils/formatMoney";
 import "./OrderDetails.css";
 
-export function OrderDetails({ orderDetails }) {
+export function OrderDetails({ orderDetails, loadCart }) {
   return (
     <div className="order-details">
       <div className="order-content">
@@ -28,6 +28,7 @@ export function OrderDetails({ orderDetails }) {
                 key={productDetails.productId}
                 productDetails={productDetails}
                 orderId={orderDetails.id}
+                loadCart={loadCart}
               />
             );
           })}

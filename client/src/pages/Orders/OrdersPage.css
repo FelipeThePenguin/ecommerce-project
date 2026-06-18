@@ -17,3 +17,13 @@
  margin-top: 24px;
  width: 50%;
 }
+
+@media(max-width: 750px) {
+ .orders-message {
+ width: 75%;
+}
+
+.orders-container {
+ width: 75%;
+}
+}

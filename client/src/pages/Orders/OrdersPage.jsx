@@ -33,7 +33,7 @@ export function OrdersPage({ cart, loadCart }) {
       <main className="orders-container">
         {orders &&
           orders.map((orderDetails) => {
-            return <OrderDetails key={orderDetails.id} orderDetails={orderDetails} />;
+            return <OrderDetails key={orderDetails.id} orderDetails={orderDetails} loadCart={loadCart} />;
           })}
       </main>
     </div>
