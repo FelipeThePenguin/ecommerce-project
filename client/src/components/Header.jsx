@@ -6,11 +6,11 @@ export function Header() {
       <div className="left-section">
         <a className="index-link" href="/">
           <img
-            src="assets/images/logos/title-logo-white.svg"
+            src="/assets/images/logos/title-logo-white.svg"
             className="title-logo hide-on-mobile"
           />
           <img
-            src="assets/images/logos/logo-white.svg"
+            src="/assets/images/logos/logo-white.svg"
             className="title-logo hide-on-desktop"
           />
         </a>
@@ -19,7 +19,7 @@ export function Header() {
         <input className="search-input" />
         <button className="search-button">
           <img
-            src="assets/images/icons/header/search-icon.svg"
+            src="/assets/images/icons/header/search-icon.svg"
             className="search-icon"
           />
         </button>
@@ -27,7 +27,7 @@ export function Header() {
       <div className="right-section">
         <a className="filter-button hide-on-mobile">
           <img
-            src="assets/images/icons/header/filter-icon.svg"
+            src="/assets/images/icons/header/filter-icon.svg"
             className="filter-icon"
           />
         </a>
@@ -36,14 +36,14 @@ export function Header() {
         </a>
         <a href="/checkout" className="hide-on-mobile">
           <div className="cart-quantity">
-            <img src="assets/images/icons/cart-icon.svg" className="cart-icon" />
+            <img src="/assets/images/icons/cart-icon.svg" className="cart-icon" />
             <span className="cart-quantity-number">3</span>
           </div>
           <span>Cart</span>
         </a>
         <a className="hide-on-desktop">
           <img
-            src="assets/images/icons/header/hamburger-icon.svg"
+            src="/assets/images/icons/header/hamburger-icon.svg"
             className="hamburger-icon"
           />
         </a>

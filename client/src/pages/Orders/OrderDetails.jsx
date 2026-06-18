@@ -27,6 +27,7 @@ export function OrderDetails({ orderDetails }) {
               <OrdersProductDetails
                 key={productDetails.productId}
                 productDetails={productDetails}
+                orderId={orderDetails.id}
               />
             );
           })}

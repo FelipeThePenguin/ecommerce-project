@@ -39,6 +39,34 @@ router.get("/", async (req, res) => {
   res.send(orders);
 });
 
+router.get("/:orderId", async (req, res) => {
+  const database = await ecommerceDatabase;
+  const collection = await database.collection("orders");
+  const productsCollection = await database.collection("products");
+  const expandOption = req.query.expand;
+  const { orderId } = req.params;
+
+  let orders = await collection.findOne({id: orderId}, { _id: 0 });
+  const products = await productsCollection.find({}, { _id: 0 }).toArray();
+
+  if (expandOption === "products") {
+
+   orders.products = orders.products.map((productDetails) => {
+    return {
+     productId: productDetails.productId,
+     quantity: productDetails.quantity,
+     estimatedDeliveryDate: productDetails.estimatedDeliveryDate,
+     product: products.find((product) => {
+      return product.id === productDetails.productId
+     })
+    }
+   })
+
+  }
+
+  res.send(orders);
+});
+
 router.post("/", async (req, res) => {
  const database = await ecommerceDatabase;
  const cartCollection = await database.collection("cart");

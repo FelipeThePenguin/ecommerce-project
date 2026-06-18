@@ -1,6 +1,7 @@
+import { Link } from "react-router";
 import dayjs from "dayjs";
 
-export function OrdersProductDetails({ productDetails }) {
+export function OrdersProductDetails({ productDetails, orderId }) {
   return (
     <>
       <div className="image-container">
@@ -22,11 +23,11 @@ export function OrdersProductDetails({ productDetails }) {
         </button>
       </div>
       <div className="track-button-container">
-        <a href="/tracking">
+        <Link to={`/tracking/${orderId}/${productDetails.productId}`}>
           <button className="secondary-button track-button">
             Track Package
           </button>
-        </a>
+        </Link>
       </div>
     </>
   );
