@@ -141,15 +141,60 @@
  position-area: bottom center;
  top: 15px;
 
- display: flex;
+ display: none;
  flex-direction: column;
-
+ 
+ width: 160px;
  padding: 10px 16px;
  border-radius: 5px;
  background: white;
  box-shadow: 0 2px 5px hsla(0, 0%, 0%, 0.25);
 }
 
+.is-changing-filter {
+ display: flex;
+}
+
+.filter-option {
+  margin: 2px 0 10px 0;
+}
+
+.filter-option-title {
+ margin: 4px 0;
+}
+
 .ratings-stars {
  height: 28px;
+}
+
+.stars-rating-input-container {
+ position: relative;
+}
+
+.stars-rating-input-stars {
+ width: 100%;
+}
+
+.stars-rating-input-slider {
+ position: absolute;
+ inset: 0;
+ padding: 0;
+ opacity: 0;
+ cursor: grab;
+}
+
+.stars-rating-input-slider:active {
+ cursor: grabbing;
+}
+
+.filter-option-input-container {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.filter-option-input {
+ padding: 4px;
+ width: 40px;
+ font-size: 12px;
 }
