@@ -18,16 +18,6 @@ export function HomePage({ cart, loadCart }) {
 
   useEffect(() => {
     const getProducts = async () => {
-      const filterOptions = {
-        stars,
-        ratingsMin,
-        ratingsMax,
-        priceMin,
-        priceMax
-      };
-
-      console.log(filterOptions, search);
-
       setSearchParams(searchParams);
       let urlString = search
         ? `/api/products?search=${search}`
