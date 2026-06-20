@@ -136,10 +136,11 @@
 /* FILTER OPTIONS */
 
 .filter-options {
- position: absolute;
+ position: fixed;
  position-anchor: --filter-button;
  position-area: bottom center;
  top: 15px;
+ z-index: 999;
 
  display: none;
  flex-direction: column;

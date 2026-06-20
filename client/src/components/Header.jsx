@@ -4,6 +4,10 @@ import "./Header.css";
 
 export function Header({ cart }) {
   const [isChangingFilters, setIsChangingFilters] = useState(false);
+  const [ratingsMin, setRatingsMin] = useState(0);
+  const [ratingsMax, setRatingsMax] = useState(999999);
+  const [priceMin, setPriceMin] = useState(0);
+  const [priceMax, setPriceMax] = useState(999999);
   const [stars, setStars] = useState(0);
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
@@ -18,7 +22,23 @@ export function Header({ cart }) {
   }
 
   function changeStars(e) {
-    setStars(Number(e.target.value));
+    setStars(e.target.value);
+  }
+
+  function changeRatingsMin(e) {
+    setRatingsMin(e.target.value);
+  }
+
+  function changeRatingsMax(e) {
+    setRatingsMax(e.target.value);
+  }
+
+  function changePriceMin(e) {
+    setPriceMin(e.target.value);
+  }
+
+  function changePriceMax(e) {
+    setPriceMax(e.target.value);
   }
 
   function toggleFilter() {
@@ -27,7 +47,7 @@ export function Header({ cart }) {
   }
 
   function searchProduct() {
-    navigate(`/?search=${search}`);
+    navigate(`/?search=${search}&stars=${stars / 2}&ratingsMin=${ratingsMin}&ratingsMax=${ratingsMax}&priceMin=${priceMin}&priceMax=${priceMax}`);
   }
 
   return (
@@ -112,17 +132,17 @@ export function Header({ cart }) {
         <div className="filter-option">
           <div className="filter-option-title">Reviews count:</div>
           <div className="filter-option-input-container">
-            <input className="filter-option-input" placeholder="Min" />
+            <input className="filter-option-input" placeholder="Min" value={ratingsMin} onChange={changeRatingsMin} />
             <span>-</span>
-            <input className="filter-option-input" placeholder="Max" />
+            <input className="filter-option-input" placeholder="Max" value={ratingsMax} onChange={changeRatingsMax} />
           </div>
         </div>
         <div className="filter-option">
           <div className="filter-option-title">Price range:</div>
           <div className="filter-option-input-container">
-            <input className="filter-option-input" placeholder="Min" />
+            <input className="filter-option-input" placeholder="Min" value={priceMin} onChange={changePriceMin} />
             <span>-</span>
-            <input className="filter-option-input" placeholder="Max" />
+            <input className="filter-option-input" placeholder="Max" value={priceMax} onChange={changePriceMax} />
           </div>
         </div>
       </div>
