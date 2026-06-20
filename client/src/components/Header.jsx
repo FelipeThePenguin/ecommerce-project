@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import "./Header.css";
 
 export function Header({ cart }) {
+  const [isMenuBarActive, setIsMenuBarActive] = useState(false);
   const [isChangingFilters, setIsChangingFilters] = useState(false);
   const [ratingsMin, setRatingsMin] = useState(0);
   const [ratingsMax, setRatingsMax] = useState(999999);
@@ -41,13 +42,18 @@ export function Header({ cart }) {
     setPriceMax(e.target.value);
   }
 
+  function toggleMenuBar() {
+    setIsMenuBarActive(isMenuBarActive ? false : true);
+  }
+
   function toggleFilter() {
-    console.log(isChangingFilters);
     setIsChangingFilters(isChangingFilters ? false : true);
   }
 
   function searchProduct() {
-    navigate(`/?search=${search}&stars=${stars / 2}&ratingsMin=${ratingsMin}&ratingsMax=${ratingsMax}&priceMin=${priceMin}&priceMax=${priceMax}`);
+    navigate(
+      `/?search=${search}&stars=${stars / 2}&ratingsMin=${ratingsMin}&ratingsMax=${ratingsMax}&priceMin=${priceMin}&priceMax=${priceMax}`,
+    );
   }
 
   return (
@@ -79,9 +85,7 @@ export function Header({ cart }) {
           </button>
         </div>
         <div className="right-section">
-          <a 
-           className="filter-button hide-on-mobile"
-           onClick={toggleFilter}>
+          <a className="filter-button hide-on-mobile" onClick={toggleFilter}>
             <img
               src="/assets/images/icons/header/filter-icon.svg"
               className="filter-icon"
@@ -100,7 +104,7 @@ export function Header({ cart }) {
             </div>
             <span>Cart</span>
           </a>
-          <a className="hide-on-desktop">
+          <a onClick={toggleMenuBar} className="hide-on-desktop">
             <img
               src="/assets/images/icons/header/hamburger-icon.svg"
               className="hamburger-icon"
@@ -109,7 +113,87 @@ export function Header({ cart }) {
         </div>
       </header>
 
-      <div className={`filter-options hide-on-mobile ${isChangingFilters ? "is-changing-filter": ""}`}>
+      <div
+        className={`menu-bar hide-on-desktop ${isMenuBarActive ? "is-menu-bar-active" : ""}`}
+      >
+        <div className="menu-bar-option menu-bar-filters">
+          <p onClick={toggleFilter} className="menu-bar-title menu-bar-filters-title">Filters</p>
+          <div
+            className={`menu-bar-filter-container ${isChangingFilters ? "is-changing-filter-on-menu" : ""}`}
+          >
+            <div className="menu-bar-filter">
+              <p className="menu-bar-filter-title">Stars Rating:</p>
+              <div className="stars-rating-input-container">
+                <img
+                  src={`/assets/images/ratings/${stars * 5}.svg`}
+                  className="menu-bar-stars-rating-input-stars"
+                />
+                <input
+                  min={0}
+                  max={10}
+                  step={1}
+                  type="range"
+                  value={stars}
+                  onChange={changeStars}
+                  className="stars-rating-input-slider"
+                />
+              </div>
+            </div>
+            <div className="menu-bar-filter">
+              <p className="menu-bar-filter-title">Reviews count:</p>
+              <div className="menu-bar-input-container">
+                <input
+                  className="filter-option-input"
+                  placeholder="Min"
+                  value={ratingsMin}
+                  onChange={changeRatingsMin}
+                />
+                <span>-</span>
+                <input
+                  className="filter-option-input"
+                  placeholder="Max"
+                  value={ratingsMax}
+                  onChange={changeRatingsMax}
+                />
+              </div>
+            </div>
+            <div className="menu-bar-filter">
+              <p className="menu-bar-filter-title">Price Range:</p>
+              <div className="menu-bar-input-container">
+                <div className="filter-option-input-container">
+                  <input
+                    className="filter-option-input"
+                    placeholder="Min"
+                    value={priceMin}
+                    onChange={changePriceMin}
+                  />
+                  <span>-</span>
+                  <input
+                    className="filter-option-input"
+                    placeholder="Max"
+                    value={priceMax}
+                    onChange={changePriceMax}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="menu-bar-option">
+          <a className="menu-bar-title" href="/orders">
+            Orders
+          </a>
+        </div>
+        <div className="menu-bar-option">
+          <a className="menu-bar-title" href="/checkout">
+            Cart &#40;{totalItems}&#41;
+          </a>
+        </div>
+      </div>
+
+      <div
+        className={`filter-options hide-on-mobile ${isChangingFilters ? "is-changing-filter" : ""}`}
+      >
         <div className="filter-option">
           <div className="filter-option-title">Stars Ratings:</div>
           <div className="stars-rating-input-container">
@@ -132,17 +216,37 @@ export function Header({ cart }) {
         <div className="filter-option">
           <div className="filter-option-title">Reviews count:</div>
           <div className="filter-option-input-container">
-            <input className="filter-option-input" placeholder="Min" value={ratingsMin} onChange={changeRatingsMin} />
+            <input
+              className="filter-option-input"
+              placeholder="Min"
+              value={ratingsMin}
+              onChange={changeRatingsMin}
+            />
             <span>-</span>
-            <input className="filter-option-input" placeholder="Max" value={ratingsMax} onChange={changeRatingsMax} />
+            <input
+              className="filter-option-input"
+              placeholder="Max"
+              value={ratingsMax}
+              onChange={changeRatingsMax}
+            />
           </div>
         </div>
         <div className="filter-option">
           <div className="filter-option-title">Price range:</div>
           <div className="filter-option-input-container">
-            <input className="filter-option-input" placeholder="Min" value={priceMin} onChange={changePriceMin} />
+            <input
+              className="filter-option-input"
+              placeholder="Min"
+              value={priceMin}
+              onChange={changePriceMin}
+            />
             <span>-</span>
-            <input className="filter-option-input" placeholder="Max" value={priceMax} onChange={changePriceMax} />
+            <input
+              className="filter-option-input"
+              placeholder="Max"
+              value={priceMax}
+              onChange={changePriceMax}
+            />
           </div>
         </div>
       </div>
