@@ -17,6 +17,7 @@ app.use("/api/cart-items", cartRouter);
 app.use("/api/orders", ordersRouter);
 app.use("/api/delivery-options", deliveryOptionsRouter);
 app.use("/api/payment-summary", paymentSummaryRouter);
+app.use(express.static("dist"));
 
 
 app.listen(3000, () => {
