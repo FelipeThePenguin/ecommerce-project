@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router";
 import axios from "axios";
 import dayjs from "dayjs";
 import { CheckoutHeader } from "./CheckoutHeader";
@@ -7,6 +8,7 @@ import { PaymentSummary } from "./PaymentSummary";
 import "./CheckoutPage.css";
 
 export function CheckoutPage({ cart, loadCart }) {
+  const navigate = useNavigate();
   const [deliveryOptions, setDeliveryOptions] = useState([]);
 
   useEffect(() => {
@@ -49,9 +51,25 @@ export function CheckoutPage({ cart, loadCart }) {
                 />
               );
             })}
+          {cart &&
+            (cart.length === 0 ? (
+              <div>
+                <p>Your cart is empty.</p>
+                <button
+                  onClick={() => {
+                    navigate("/");
+                  }}
+                  className="view-products-button primary-button"
+                >
+                  View products
+                </button>
+              </div>
+            ) : (
+              ""
+            ))}
         </section>
 
-       <PaymentSummary cart={cart} />
+        <PaymentSummary cart={cart} />
       </main>
     </div>
   );

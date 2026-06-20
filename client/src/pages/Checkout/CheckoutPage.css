@@ -26,3 +26,11 @@
   row-gap: 20px;
  }
 }
+
+.cart-empty-button {
+ opacity: 0.8;
+}
+
+.view-products-button {
+ margin-top: 8px;
+}

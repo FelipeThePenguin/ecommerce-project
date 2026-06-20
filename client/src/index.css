@@ -3,7 +3,7 @@
  --primary: hsl(277, 70%, 33%);
  --primary-muted: hsl(277, 70%, 26%);
  --primary-light: hsl(277, 70%, 77%);
- --header-height: min(9vh, 100px);
+ --header-height: clamp(80px, 9vh, 100px);
 }
 
 * {

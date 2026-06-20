@@ -179,15 +179,15 @@ export function Header({ cart }) {
             </div>
           </div>
         </div>
-        <div className="menu-bar-option">
-          <a className="menu-bar-title" href="/orders">
+        <div onClick={() => {navigate("/orders")}} className="menu-bar-option">
+          <span className="menu-bar-title">
             Orders
-          </a>
+          </span>
         </div>
-        <div className="menu-bar-option">
-          <a className="menu-bar-title" href="/checkout">
+        <div onClick={() => {navigate("/checkout")}}className="menu-bar-option">
+          <span className="menu-bar-title">
             Cart &#40;{totalItems}&#41;
-          </a>
+          </span>
         </div>
       </div>
 

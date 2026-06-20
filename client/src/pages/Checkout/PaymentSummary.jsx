@@ -2,25 +2,29 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { formatMoney } from "../../utils/formatMoney";
-import './PaymentSummary.css';
+import "./PaymentSummary.css";
 
 export function PaymentSummary({ cart }) {
   const [paymentSummary, setPaymentSummary] = useState({});
   const navigate = useNavigate();
 
   const createOrder = async () => {
+    if (cart.length === 0) {
+      return;
+    }
+
     const response = await axios.post("/api/orders");
     navigate("/orders");
     return response.data;
   };
 
   useEffect(() => {
-   const getPaymentSummary = async () => {
-    const response = await axios.get("/api/payment-summary");
-    setPaymentSummary(response.data);
-   };
-   getPaymentSummary();
-  }, [cart])
+    const getPaymentSummary = async () => {
+      const response = await axios.get("/api/payment-summary");
+      setPaymentSummary(response.data);
+    };
+    getPaymentSummary();
+  }, [cart]);
 
   return (
     <section className="payment-summary">
@@ -36,7 +40,9 @@ export function PaymentSummary({ cart }) {
         </div>
         <div className="payment-summary-row">
           <span>Total before tax:</span>
-          <span className="tax-border">{formatMoney(paymentSummary?.totalBeforeTaxCents)}</span>
+          <span className="tax-border">
+            {formatMoney(paymentSummary?.totalBeforeTaxCents)}
+          </span>
         </div>
         <div className="payment-summary-row">
           <span>Estimated Tax (10%):</span>
@@ -46,7 +52,10 @@ export function PaymentSummary({ cart }) {
           <span>Order total:</span>
           <span>{formatMoney(paymentSummary?.totalCostCents)}</span>
         </div>
-        <button onClick={createOrder} className="primary-button order-button">
+        <button
+          onClick={createOrder}
+          className={`primary-button order-button ${cart.length === 0 ? "cart-empty-button" : ""}`}
+        >
           Place your order
         </button>
       </div>
