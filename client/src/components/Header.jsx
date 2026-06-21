@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, Link } from "react-router";
 import "./Header.css";
 
 export function Header({ cart }) {
@@ -60,7 +60,7 @@ export function Header({ cart }) {
     <>
       <header className="ecommerce-header">
         <div className="left-section">
-          <a className="index-link" href="/">
+          <Link className="index-link" to="/">
             <img
               src="/assets/images/logos/title-logo-white.svg"
               className="title-logo hide-on-mobile"
@@ -69,7 +69,7 @@ export function Header({ cart }) {
               src="/assets/images/logos/logo-white.svg"
               className="title-logo hide-on-desktop"
             />
-          </a>
+          </Link>
         </div>
         <div className="middle-section">
           <input
@@ -91,10 +91,10 @@ export function Header({ cart }) {
               className="filter-icon"
             />
           </a>
-          <a href="/orders" className="hide-on-mobile">
+          <Link to="/orders" className="hide-on-mobile">
             Orders
-          </a>
-          <a href="/checkout" className="hide-on-mobile">
+          </Link>
+          <Link to="/checkout" className="hide-on-mobile">
             <div className="cart-quantity">
               <img
                 src="/assets/images/icons/cart-icon.svg"
@@ -103,7 +103,7 @@ export function Header({ cart }) {
               <span className="cart-quantity-number">{totalItems}</span>
             </div>
             <span>Cart</span>
-          </a>
+          </Link>
           <a onClick={toggleMenuBar} className="hide-on-desktop">
             <img
               src="/assets/images/icons/header/hamburger-icon.svg"

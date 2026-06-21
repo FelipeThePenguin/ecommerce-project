@@ -1,7 +1,7 @@
 import axios from "axios";
 import dayjs from "dayjs";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router";
+import { useParams, Link } from "react-router";
 import { Header } from "../../components/Header";
 import "./TrackingPage.css";
 
@@ -58,9 +58,9 @@ export function TrackingPage({ cart, loadCart }) {
           {productDetails && (
             <>
               <div>
-                <a href="/orders" className="primary-span tracking-orders-link">
+                <Link to="/orders" className="primary-span tracking-orders-link">
                   View all orders
-                </a>
+                </Link>
               </div>
               <h2>
                 Arriving on{" "}

@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import './CheckoutHeader.css';
 
 export function CheckoutHeader({ cart }) {
@@ -9,7 +10,7 @@ export function CheckoutHeader({ cart }) {
   return (
     <header className="checkout-header">
       <div className="left-section">
-        <a className="index-link" href="/">
+        <Link className="index-link" to="/">
           <img
             src="assets/images/logos/title-logo-primary.svg"
             className="title-logo hide-on-mobile"
@@ -18,12 +19,12 @@ export function CheckoutHeader({ cart }) {
             src="assets/images/logos/logo-primary.svg"
             className="title-logo hide-on-desktop"
           />
-        </a>
+        </Link>
       </div>
       <div className="middle-section">
-        <a href="/">
+        <Link to="/">
           Checkout &#40;<span className="primary-span">{totalItems} items</span>&#41;
-        </a>
+        </Link>
       </div>
       <div className="right-section">
         <img
