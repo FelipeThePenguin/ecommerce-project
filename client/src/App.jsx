@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { Routes, Route, BrowserRouter } from "react-router";
+import { Routes, Route } from "react-router";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { CheckoutPage } from "./pages/Checkout/CheckoutPage";
 import { OrdersPage } from "./pages/Orders/OrdersPage";
@@ -16,7 +16,6 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
       <Routes>
         <Route index element={<HomePage cart={cart} loadCart={loadCart} />} />
         <Route
@@ -32,7 +31,6 @@ function App() {
           element={<TrackingPage cart={cart} loadCart={loadCart} />}
         />
       </Routes>
-    </BrowserRouter>
   );
 }
 

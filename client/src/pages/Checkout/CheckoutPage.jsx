@@ -38,7 +38,7 @@ export function CheckoutPage({ cart, loadCart }) {
                 },
               );
               const deliveryDate = dayjs()
-                .add(selectedDeliveryOption.deliveryDays, "days")
+                .add(selectedDeliveryOption?.deliveryDays, "days")
                 .format("dddd, MMMM, D");
 
               return (
