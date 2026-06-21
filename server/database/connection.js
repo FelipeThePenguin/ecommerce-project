@@ -7,8 +7,9 @@ dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
 dotenv.config();
 
-// Replace the placeholder with your Atlas connection string
 const uri = process.env.ATLAS_URI;
+console.log("Loaded URI", uri);
+
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
   serverApi: {
@@ -22,9 +23,8 @@ export let ecommerceDatabase;
 
 export async function runStableAPIConnect() {
   try {
-    // Connect the client to the server (optional starting in v4.7)
     await client.connect();
-    // Send a ping to confirm a successful connection
+    
     const database = await client.db('ecommerce');
     console.log(
       'Pinged your deployment. You successfully connected to MongoDB!\n',
